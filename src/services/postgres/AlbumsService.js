@@ -2,6 +2,7 @@ const { Pool } = require('pg');
 const { nanoid } = require('nanoid');
 const InvariantError = require('../../exceptions/InvariantError');
 const NotFoundError = require('../../exceptions/NotFoundError');
+const { mapAlbumsDBToModel } = require('../../utils/index2');
 
 class AlbumService {
   constructor() {
@@ -23,22 +24,35 @@ class AlbumService {
 
     return result.rows[0].id;
   }
-  // async getNotes() {
-  //   const result = await this._pool.query('SELECT * FROM notes');
-  //   return result.rows.map(mapDBToModel);
-  // }
   async getAlbumById(id) {
-    const query = {
-      text: 'SELECT * FROM albums WHERE id = $1',
-      values: [id],
-    };
-    const result = await this._pool.query(query);
+    const query = [
+      {
+        text: 'SELECT id, name, year, cover FROM albums WHERE id = $1',
+        values: [id],
+      },
+      {
+        text: 'SELECT * FROM albums WHERE id = $1',
+        values: [id],
+      },
+    ];
 
-    if (!result.rows.length) {
+    const albumsResult = await this._pool.query(query[0]);
+
+    if (!albumsResult.rowCount) {
       throw new NotFoundError('Album tidak ditemukan');
     }
 
-    return result.rows[0];
+    const album = albumsResult.rows.map(mapAlbumsDBToModel)[0];
+
+    const songsResult = await this._pool.query(query[1]);
+
+    if (!songsResult.rowCount) {
+      album.songs = songsResult.rows;
+    }
+
+    return album;
+
+    // const result = await this._pool.query(query);
   }
   async editAlbumById(id, { name, year }) {
     const query = {
@@ -62,6 +76,33 @@ class AlbumService {
 
     if (!result.rows.length) {
       throw new NotFoundError('Album gagal dihapus. Id tidak ditemukan');
+    }
+  }
+  // upload cover
+  async addCoverById(id, file) {
+    const query = {
+      text: 'UPDATE albums SET cover = $1 WHERE id = $2 RETURNING id',
+      values: [file, id],
+    };
+
+    const result = await this._pool.query(query);
+
+    if (!result.rows[0].id) {
+      throw new InvariantError('Sampul gagal diunggah');
+    }
+
+    return result.rows[0].id;
+  }
+  async verifyExistingAlbumById(id) {
+    const query = {
+      text: 'SELECT id FROM albums WHERE id = $1',
+      values: [id],
+    };
+
+    const result = await this._pool.query(query);
+
+    if (!result.rowCount) {
+      throw new NotFoundError('Album tidak ditemukan');
     }
   }
 }

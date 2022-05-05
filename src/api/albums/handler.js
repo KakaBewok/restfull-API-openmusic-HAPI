@@ -43,15 +43,6 @@ class AlbumsHandler {
       return response;
     }
   }
-  // async getNotesHandler() {
-  //   const notes = await this._service.getNotes();
-  //   return {
-  //     status: 'success',
-  //     data: {
-  //       notes,
-  //     },
-  //   };
-  // }
   async getAlbumByIdHandler(request, h) {
     try {
       const { id } = request.params;

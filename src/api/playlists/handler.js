@@ -146,16 +146,14 @@ class PlaylistsHandler {
       const { id: credentialId } = request.auth.credentials;
 
       await this._service.verifyPlaylistAccess(playlistId, credentialId);
-      const playlist = await this._service.getPlaylistById(playlistId);
-      const songs = await this._service.getSongsFromPlaylist(playlistId);
-
-      const playlistContainSongs = { ...playlist, songs };
+      // const playlist = await this._service.getPlaylistById(playlistId);
+      const playlist = await this._service.getSongsFromPlaylist(playlistId);
 
       return h
         .response({
           status: 'success',
           data: {
-            playlist: playlistContainSongs,
+            playlist,
           },
         })
         .code(200);
