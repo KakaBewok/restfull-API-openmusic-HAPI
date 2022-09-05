@@ -1,0 +1,219 @@
+{
+	"id": "ddcc635b-c834-4051-bde7-044988b481b9",
+	"name": "Open Music API V3 Test",
+	"timestamp": "2022-09-05T17:17:27.453Z",
+	"collection_id": "20115429-747ae155-4127-43c7-a5d2-2f460ebe64b9",
+	"folder_id": "20115429-1da5551d-ff88-44de-a596-6934547ac9be",
+	"environment_id": "20115429-f4674219-acf5-4211-b70e-8a8bc092a0dc",
+	"totalPass": 32,
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "afab1f33-883d-49ba-846c-eb09b5bf0015",
+			"name": "Add User with Invalid Payload",
+			"time": 6,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"it should response 400 status code": true,
+				"response Content-Type header should have application/json value": true,
+				"response body should an object": true,
+				"response body have correct property and value": true
+			},
+			"testPassFailCounts": {
+				"it should response 400 status code": {
+					"pass": 6,
+					"fail": 0
+				},
+				"response Content-Type header should have application/json value": {
+					"pass": 6,
+					"fail": 0
+				},
+				"response body should an object": {
+					"pass": 6,
+					"fail": 0
+				},
+				"response body have correct property and value": {
+					"pass": 6,
+					"fail": 0
+				}
+			},
+			"times": [
+				8,
+				5,
+				6,
+				6,
+				6,
+				6
+			],
+			"allTests": [
+				{
+					"it should response 400 status code": true,
+					"response Content-Type header should have application/json value": true,
+					"response body should an object": true,
+					"response body have correct property and value": true
+				},
+				{
+					"it should response 400 status code": true,
+					"response Content-Type header should have application/json value": true,
+					"response body should an object": true,
+					"response body have correct property and value": true
+				},
+				{
+					"it should response 400 status code": true,
+					"response Content-Type header should have application/json value": true,
+					"response body should an object": true,
+					"response body have correct property and value": true
+				},
+				{
+					"it should response 400 status code": true,
+					"response Content-Type header should have application/json value": true,
+					"response body should an object": true,
+					"response body have correct property and value": true
+				},
+				{
+					"it should response 400 status code": true,
+					"response Content-Type header should have application/json value": true,
+					"response body should an object": true,
+					"response body have correct property and value": true
+				},
+				{
+					"it should response 400 status code": true,
+					"response Content-Type header should have application/json value": true,
+					"response body should an object": true,
+					"response body have correct property and value": true
+				}
+			]
+		},
+		{
+			"id": "3ae760dc-2708-4618-870c-f2a53b95237d",
+			"name": "Add User with Valid Payload",
+			"url": "http://localhost:5000/users",
+			"time": 221,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {
+				"it should response 201 status code": true,
+				"response Content-Type header should have application/json value": true,
+				"response body should an object": true,
+				"response body have correct property and value": true
+			},
+			"testPassFailCounts": {
+				"it should response 201 status code": {
+					"pass": 1,
+					"fail": 0
+				},
+				"response Content-Type header should have application/json value": {
+					"pass": 1,
+					"fail": 0
+				},
+				"response body should an object": {
+					"pass": 1,
+					"fail": 0
+				},
+				"response body have correct property and value": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				221
+			],
+			"allTests": [
+				{
+					"it should response 201 status code": true,
+					"response Content-Type header should have application/json value": true,
+					"response body should an object": true,
+					"response body have correct property and value": true
+				}
+			]
+		},
+		{
+			"id": "6d2d187d-9ee4-453f-9192-cc7a424fd7a3",
+			"name": "Add User with Already Taken Username",
+			"url": "http://localhost:5000/users",
+			"time": 5,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"it should response 400 status code": true,
+				"response Content-Type header should have application/json value": true,
+				"response body should an object": true,
+				"response body have correct property and value": true
+			},
+			"testPassFailCounts": {
+				"it should response 400 status code": {
+					"pass": 1,
+					"fail": 0
+				},
+				"response Content-Type header should have application/json value": {
+					"pass": 1,
+					"fail": 0
+				},
+				"response body should an object": {
+					"pass": 1,
+					"fail": 0
+				},
+				"response body have correct property and value": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				5
+			],
+			"allTests": [
+				{
+					"it should response 400 status code": true,
+					"response Content-Type header should have application/json value": true,
+					"response body should an object": true,
+					"response body have correct property and value": true
+				}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 263,
+	"collection": {
+		"requests": [
+			{
+				"id": "afab1f33-883d-49ba-846c-eb09b5bf0015",
+				"method": "POST"
+			},
+			{
+				"id": "afab1f33-883d-49ba-846c-eb09b5bf0015",
+				"method": "POST"
+			},
+			{
+				"id": "afab1f33-883d-49ba-846c-eb09b5bf0015",
+				"method": "POST"
+			},
+			{
+				"id": "afab1f33-883d-49ba-846c-eb09b5bf0015",
+				"method": "POST"
+			},
+			{
+				"id": "afab1f33-883d-49ba-846c-eb09b5bf0015",
+				"method": "POST"
+			},
+			{
+				"id": "afab1f33-883d-49ba-846c-eb09b5bf0015",
+				"method": "POST"
+			},
+			{
+				"id": "3ae760dc-2708-4618-870c-f2a53b95237d",
+				"method": "POST"
+			},
+			{
+				"id": "6d2d187d-9ee4-453f-9192-cc7a424fd7a3",
+				"method": "POST"
+			}
+		]
+	}
+}

@@ -1,0 +1,504 @@
+{
+	"id": "5c6d09a7-b536-4ac2-b52c-69cc7288e3b9",
+	"name": "Open Music API V3 Test",
+	"timestamp": "2022-09-05T17:30:47.772Z",
+	"collection_id": "20115429-747ae155-4127-43c7-a5d2-2f460ebe64b9",
+	"folder_id": "20115429-30e09403-eb02-4b0a-a2d2-d03cd87774d6",
+	"environment_id": "20115429-f4674219-acf5-4211-b70e-8a8bc092a0dc",
+	"totalPass": 23,
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "d6b9d507-0db7-44b9-85d8-4b909dd81828",
+			"name": "Add Song A",
+			"url": "http://localhost:5000/songs",
+			"time": 149,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				149
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "0fddb56d-66f1-49a5-bd54-fa86560513f9",
+			"name": "Add Song B",
+			"url": "http://localhost:5000/songs",
+			"time": 8,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				8
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "ad844d08-9ec2-4c28-a8f7-67109866375d",
+			"name": "Add User John",
+			"url": "http://localhost:5000/users",
+			"time": 107,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				107
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "5c7d1222-e09c-4376-b8d2-9c06dc3b5a98",
+			"name": "Add User Jane",
+			"url": "http://localhost:5000/users",
+			"time": 6,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				6
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "1107b392-3d9b-4e03-b230-09655e2897aa",
+			"name": "Login with User John",
+			"url": "http://localhost:5000/authentications",
+			"time": 301,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				301
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "c6061745-f77b-4233-b17a-1e7b64328297",
+			"name": "Login with User Jane",
+			"url": "http://localhost:5000/authentications",
+			"time": 132,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				132
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "29b5cd65-820e-423b-85dc-4ee9ff909ce3",
+			"name": "(John) Create Playlist",
+			"url": "http://localhost:5000/playlists",
+			"time": 113,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				113
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "c7b1587e-cbf0-44ec-bae0-1260eb4565e1",
+			"name": "(John) Add Song A to Playlist",
+			"url": "http://localhost:5000/playlists/playlist-C-mi-Gh7k-4-u7tv/songs",
+			"time": 16,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				16
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "a814e21a-e14d-4ef4-b2cf-58f25238f07c",
+			"name": "(John) Add Song B to Playlist",
+			"url": "http://localhost:5000/playlists/playlist-C-mi-Gh7k-4-u7tv/songs",
+			"time": 7,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				7
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "7af1d346-42f5-488e-a66d-36750af06a4d",
+			"name": "Export Playlist without Authentication",
+			"url": "http://localhost:5000/export/playlists/playlist-C-mi-Gh7k-4-u7tv",
+			"time": 5,
+			"responseCode": {
+				"code": 401,
+				"name": "Unauthorized"
+			},
+			"tests": {
+				"it should response 401 status code": true,
+				"response Content-Type header should have application/json value": true,
+				"response body should an object": true
+			},
+			"testPassFailCounts": {
+				"it should response 401 status code": {
+					"pass": 1,
+					"fail": 0
+				},
+				"response Content-Type header should have application/json value": {
+					"pass": 1,
+					"fail": 0
+				},
+				"response body should an object": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				5
+			],
+			"allTests": [
+				{
+					"it should response 401 status code": true,
+					"response Content-Type header should have application/json value": true,
+					"response body should an object": true
+				}
+			]
+		},
+		{
+			"id": "67232e90-6bb4-409a-b4c1-0159cf665bf7",
+			"name": "(John) Export Playlist with Bad Payload",
+			"url": "http://localhost:5000/export/playlists/playlist-C-mi-Gh7k-4-u7tv",
+			"time": 6,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"it should response 400 status code": true,
+				"response Content-Type header should have application/json value": true,
+				"response body should an object": true,
+				"response body have correct property and value": true
+			},
+			"testPassFailCounts": {
+				"it should response 400 status code": {
+					"pass": 1,
+					"fail": 0
+				},
+				"response Content-Type header should have application/json value": {
+					"pass": 1,
+					"fail": 0
+				},
+				"response body should an object": {
+					"pass": 1,
+					"fail": 0
+				},
+				"response body have correct property and value": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				6
+			],
+			"allTests": [
+				{
+					"it should response 400 status code": true,
+					"response Content-Type header should have application/json value": true,
+					"response body should an object": true,
+					"response body have correct property and value": true
+				}
+			]
+		},
+		{
+			"id": "4ad53ee5-ffe7-4ee2-8f91-f9f276b356cc",
+			"name": "(John) Export Playlist with Not Found Playlist",
+			"url": "http://localhost:5000/export/playlists/xxx",
+			"time": 8,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {
+				"it should response 404 status code": true,
+				"response Content-Type header should have application/json value": true,
+				"response body should an object": true,
+				"response body have correct property and value": true
+			},
+			"testPassFailCounts": {
+				"it should response 404 status code": {
+					"pass": 1,
+					"fail": 0
+				},
+				"response Content-Type header should have application/json value": {
+					"pass": 1,
+					"fail": 0
+				},
+				"response body should an object": {
+					"pass": 1,
+					"fail": 0
+				},
+				"response body have correct property and value": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				8
+			],
+			"allTests": [
+				{
+					"it should response 404 status code": true,
+					"response Content-Type header should have application/json value": true,
+					"response body should an object": true,
+					"response body have correct property and value": true
+				}
+			]
+		},
+		{
+			"id": "d2ff8301-bc83-4171-99d9-930d5c17f9af",
+			"name": "(Jane) Export John Playlist",
+			"url": "http://localhost:5000/export/playlists/playlist-C-mi-Gh7k-4-u7tv",
+			"time": 6,
+			"responseCode": {
+				"code": 403,
+				"name": "Forbidden"
+			},
+			"tests": {
+				"it should response 403 status code": true,
+				"response Content-Type header should have application/json value": true,
+				"response body should an object": true,
+				"response body have correct property and value": true
+			},
+			"testPassFailCounts": {
+				"it should response 403 status code": {
+					"pass": 1,
+					"fail": 0
+				},
+				"response Content-Type header should have application/json value": {
+					"pass": 1,
+					"fail": 0
+				},
+				"response body should an object": {
+					"pass": 1,
+					"fail": 0
+				},
+				"response body have correct property and value": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				6
+			],
+			"allTests": [
+				{
+					"it should response 403 status code": true,
+					"response Content-Type header should have application/json value": true,
+					"response body should an object": true,
+					"response body have correct property and value": true
+				}
+			]
+		},
+		{
+			"id": "b4cbc063-5ab5-4ba3-922d-290b82253cff",
+			"name": "(John) Export Playlist",
+			"url": "http://localhost:5000/export/playlists/playlist-C-mi-Gh7k-4-u7tv",
+			"time": 116,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {
+				"it should response 201 status code": true,
+				"response Content-Type header should have application/json value": true,
+				"response body should an object": true,
+				"response body have correct property and value": true
+			},
+			"testPassFailCounts": {
+				"it should response 201 status code": {
+					"pass": 1,
+					"fail": 0
+				},
+				"response Content-Type header should have application/json value": {
+					"pass": 1,
+					"fail": 0
+				},
+				"response body should an object": {
+					"pass": 1,
+					"fail": 0
+				},
+				"response body have correct property and value": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				116
+			],
+			"allTests": [
+				{
+					"it should response 201 status code": true,
+					"response Content-Type header should have application/json value": true,
+					"response body should an object": true,
+					"response body have correct property and value": true
+				}
+			]
+		},
+		{
+			"id": "7a8cbc91-a347-45c8-8f86-aa57f84355dc",
+			"name": "(John) Delete Playlist",
+			"url": "http://localhost:5000/playlists/playlist-C-mi-Gh7k-4-u7tv",
+			"time": 46,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"it should response 200 status code": true,
+				"response Content-Type header should have application/json value": true,
+				"response body should an object": true,
+				"response body have correct property and value": true
+			},
+			"testPassFailCounts": {
+				"it should response 200 status code": {
+					"pass": 1,
+					"fail": 0
+				},
+				"response Content-Type header should have application/json value": {
+					"pass": 1,
+					"fail": 0
+				},
+				"response body should an object": {
+					"pass": 1,
+					"fail": 0
+				},
+				"response body have correct property and value": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				46
+			],
+			"allTests": [
+				{
+					"it should response 200 status code": true,
+					"response Content-Type header should have application/json value": true,
+					"response body should an object": true,
+					"response body have correct property and value": true
+				}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 1026,
+	"collection": {
+		"requests": [
+			{
+				"id": "d6b9d507-0db7-44b9-85d8-4b909dd81828",
+				"method": "POST"
+			},
+			{
+				"id": "0fddb56d-66f1-49a5-bd54-fa86560513f9",
+				"method": "POST"
+			},
+			{
+				"id": "ad844d08-9ec2-4c28-a8f7-67109866375d",
+				"method": "POST"
+			},
+			{
+				"id": "5c7d1222-e09c-4376-b8d2-9c06dc3b5a98",
+				"method": "POST"
+			},
+			{
+				"id": "1107b392-3d9b-4e03-b230-09655e2897aa",
+				"method": "POST"
+			},
+			{
+				"id": "c6061745-f77b-4233-b17a-1e7b64328297",
+				"method": "POST"
+			},
+			{
+				"id": "29b5cd65-820e-423b-85dc-4ee9ff909ce3",
+				"method": "POST"
+			},
+			{
+				"id": "c7b1587e-cbf0-44ec-bae0-1260eb4565e1",
+				"method": "POST"
+			},
+			{
+				"id": "a814e21a-e14d-4ef4-b2cf-58f25238f07c",
+				"method": "POST"
+			},
+			{
+				"id": "7af1d346-42f5-488e-a66d-36750af06a4d",
+				"method": "POST"
+			},
+			{
+				"id": "67232e90-6bb4-409a-b4c1-0159cf665bf7",
+				"method": "POST"
+			},
+			{
+				"id": "4ad53ee5-ffe7-4ee2-8f91-f9f276b356cc",
+				"method": "POST"
+			},
+			{
+				"id": "d2ff8301-bc83-4171-99d9-930d5c17f9af",
+				"method": "POST"
+			},
+			{
+				"id": "b4cbc063-5ab5-4ba3-922d-290b82253cff",
+				"method": "POST"
+			},
+			{
+				"id": "7a8cbc91-a347-45c8-8f86-aa57f84355dc",
+				"method": "DELETE"
+			}
+		]
+	}
+}

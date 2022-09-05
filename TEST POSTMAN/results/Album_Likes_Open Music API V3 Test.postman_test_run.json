@@ -1,0 +1,532 @@
+{
+	"id": "9f1adaa7-6f85-4111-ac9d-e9f43d3e5064",
+	"name": "Open Music API V3 Test",
+	"timestamp": "2022-09-05T17:35:46.387Z",
+	"collection_id": "20115429-747ae155-4127-43c7-a5d2-2f460ebe64b9",
+	"folder_id": "20115429-07c550fa-4316-4de3-8c94-f9e88880ee9d",
+	"environment_id": "20115429-f4674219-acf5-4211-b70e-8a8bc092a0dc",
+	"totalPass": 34,
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "cc16878f-ae9b-4014-9b82-4c366d1aa58a",
+			"name": "Add Album",
+			"url": "http://localhost:5000/albums",
+			"time": 143,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				143
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "d988f6a6-2894-4d3f-8b81-1ce42b2555f7",
+			"name": "Add User John",
+			"url": "http://localhost:5000/users",
+			"time": 87,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				87
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "43854838-c2af-497e-aa5d-1a3298a4029c",
+			"name": "Add User Jane",
+			"url": "http://localhost:5000/users",
+			"time": 8,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				8
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "1ab9b0c5-ad60-42bd-86b8-b172358b61e9",
+			"name": "Login with User John",
+			"url": "http://localhost:5000/authentications",
+			"time": 237,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				237
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "a71f75c0-1b49-4a76-a802-e8237e160d98",
+			"name": "Login with User Jane",
+			"url": "http://localhost:5000/authentications",
+			"time": 161,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				161
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "e3d0ee2a-7c1c-4ef4-a813-73a03be389d7",
+			"name": "Like Album with No Authentication",
+			"url": "http://localhost:5000/albums/46Zxhg9sb2e2DtW7/likes",
+			"time": 6,
+			"responseCode": {
+				"code": 401,
+				"name": "Unauthorized"
+			},
+			"tests": {
+				"it should response 401 status code": true,
+				"response Content-Type header should have application/json value": true,
+				"response body should an object": true
+			},
+			"testPassFailCounts": {
+				"it should response 401 status code": {
+					"pass": 1,
+					"fail": 0
+				},
+				"response Content-Type header should have application/json value": {
+					"pass": 1,
+					"fail": 0
+				},
+				"response body should an object": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				6
+			],
+			"allTests": [
+				{
+					"it should response 401 status code": true,
+					"response Content-Type header should have application/json value": true,
+					"response body should an object": true
+				}
+			]
+		},
+		{
+			"id": "0024fe89-0881-4a90-921d-ae3e6cfc1fb4",
+			"name": "(John) Like Not Found Album",
+			"url": "http://localhost:5000/albums/xxx/likes",
+			"time": 8,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {
+				"it should response 404 status code": true,
+				"response Content-Type header should have application/json value": true,
+				"response body should an object": true,
+				"response body have correct property and value": true
+			},
+			"testPassFailCounts": {
+				"it should response 404 status code": {
+					"pass": 1,
+					"fail": 0
+				},
+				"response Content-Type header should have application/json value": {
+					"pass": 1,
+					"fail": 0
+				},
+				"response body should an object": {
+					"pass": 1,
+					"fail": 0
+				},
+				"response body have correct property and value": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				8
+			],
+			"allTests": [
+				{
+					"it should response 404 status code": true,
+					"response Content-Type header should have application/json value": true,
+					"response body should an object": true,
+					"response body have correct property and value": true
+				}
+			]
+		},
+		{
+			"id": "6b907b60-7dea-424b-828e-154afef55e9e",
+			"name": "(John) Like Album",
+			"url": "http://localhost:5000/albums/46Zxhg9sb2e2DtW7/likes",
+			"time": 16,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {
+				"it should response 201 status code": true,
+				"response Content-Type header should have application/json value": true,
+				"response body should an object": true,
+				"response body have correct property and value": true
+			},
+			"testPassFailCounts": {
+				"it should response 201 status code": {
+					"pass": 1,
+					"fail": 0
+				},
+				"response Content-Type header should have application/json value": {
+					"pass": 1,
+					"fail": 0
+				},
+				"response body should an object": {
+					"pass": 1,
+					"fail": 0
+				},
+				"response body have correct property and value": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				16
+			],
+			"allTests": [
+				{
+					"it should response 201 status code": true,
+					"response Content-Type header should have application/json value": true,
+					"response body should an object": true,
+					"response body have correct property and value": true
+				}
+			]
+		},
+		{
+			"id": "e6a9bbef-a180-455c-85dd-a0620473c690",
+			"name": "(Jane) Like Album",
+			"url": "http://localhost:5000/albums/46Zxhg9sb2e2DtW7/likes",
+			"time": 12,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {
+				"it should response 201 status code": true,
+				"response Content-Type header should have application/json value": true,
+				"response body should an object": true,
+				"response body have correct property and value": true
+			},
+			"testPassFailCounts": {
+				"it should response 201 status code": {
+					"pass": 1,
+					"fail": 0
+				},
+				"response Content-Type header should have application/json value": {
+					"pass": 1,
+					"fail": 0
+				},
+				"response body should an object": {
+					"pass": 1,
+					"fail": 0
+				},
+				"response body have correct property and value": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				12
+			],
+			"allTests": [
+				{
+					"it should response 201 status code": true,
+					"response Content-Type header should have application/json value": true,
+					"response body should an object": true,
+					"response body have correct property and value": true
+				}
+			]
+		},
+		{
+			"id": "335947b8-2c44-42a3-ae98-4d0ef29d8d65",
+			"name": "Get Album Like Count",
+			"url": "http://localhost:5000/albums/46Zxhg9sb2e2DtW7/likes",
+			"time": 16,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"it should response 200 status code": true,
+				"response Content-Type header should have application/json value": true,
+				"respose should not have X-Data-Source header with value \"cache\"": true,
+				"response body should an object": true,
+				"response body have correct property and value": true
+			},
+			"testPassFailCounts": {
+				"it should response 200 status code": {
+					"pass": 1,
+					"fail": 0
+				},
+				"response Content-Type header should have application/json value": {
+					"pass": 1,
+					"fail": 0
+				},
+				"respose should not have X-Data-Source header with value \"cache\"": {
+					"pass": 1,
+					"fail": 0
+				},
+				"response body should an object": {
+					"pass": 1,
+					"fail": 0
+				},
+				"response body have correct property and value": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				16
+			],
+			"allTests": [
+				{
+					"it should response 200 status code": true,
+					"response Content-Type header should have application/json value": true,
+					"respose should not have X-Data-Source header with value \"cache\"": true,
+					"response body should an object": true,
+					"response body have correct property and value": true
+				}
+			]
+		},
+		{
+			"id": "99940335-edac-4b91-a011-e9282841c2d3",
+			"name": "(Jane) Unlike Album",
+			"url": "http://localhost:5000/albums/46Zxhg9sb2e2DtW7/likes",
+			"time": 10,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {
+				"it should response 201 status code": true,
+				"response Content-Type header should have application/json value": true,
+				"response body should an object": true,
+				"response body have correct property and value": true
+			},
+			"testPassFailCounts": {
+				"it should response 201 status code": {
+					"pass": 1,
+					"fail": 0
+				},
+				"response Content-Type header should have application/json value": {
+					"pass": 1,
+					"fail": 0
+				},
+				"response body should an object": {
+					"pass": 1,
+					"fail": 0
+				},
+				"response body have correct property and value": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				10
+			],
+			"allTests": [
+				{
+					"it should response 201 status code": true,
+					"response Content-Type header should have application/json value": true,
+					"response body should an object": true,
+					"response body have correct property and value": true
+				}
+			]
+		},
+		{
+			"id": "0ed14525-1341-4d07-9a8e-0a23187ac2d1",
+			"name": "Get Album Like Count After Jane Unlike",
+			"url": "http://localhost:5000/albums/46Zxhg9sb2e2DtW7/likes",
+			"time": 6,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"it should response 200 status code": true,
+				"response Content-Type header should have application/json value": true,
+				"respose should not have X-Data-Source header with value \"cache\"": true,
+				"response body should an object": true,
+				"response body have correct property and value": true
+			},
+			"testPassFailCounts": {
+				"it should response 200 status code": {
+					"pass": 1,
+					"fail": 0
+				},
+				"response Content-Type header should have application/json value": {
+					"pass": 1,
+					"fail": 0
+				},
+				"respose should not have X-Data-Source header with value \"cache\"": {
+					"pass": 1,
+					"fail": 0
+				},
+				"response body should an object": {
+					"pass": 1,
+					"fail": 0
+				},
+				"response body have correct property and value": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				6
+			],
+			"allTests": [
+				{
+					"it should response 200 status code": true,
+					"response Content-Type header should have application/json value": true,
+					"respose should not have X-Data-Source header with value \"cache\"": true,
+					"response body should an object": true,
+					"response body have correct property and value": true
+				}
+			]
+		},
+		{
+			"id": "f41f0342-a530-45f8-bff2-c699c3f4a573",
+			"name": "[Cache Test] Get Album Like Count (Again)",
+			"url": "http://localhost:5000/albums/46Zxhg9sb2e2DtW7/likes",
+			"time": 5,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"it should response 200 status code": true,
+				"response Content-Type header should have application/json value": true,
+				"respose should have X-Data-Source header with value \"cache\"": true,
+				"response body should an object": true,
+				"response body have correct property and value": true
+			},
+			"testPassFailCounts": {
+				"it should response 200 status code": {
+					"pass": 1,
+					"fail": 0
+				},
+				"response Content-Type header should have application/json value": {
+					"pass": 1,
+					"fail": 0
+				},
+				"respose should have X-Data-Source header with value \"cache\"": {
+					"pass": 1,
+					"fail": 0
+				},
+				"response body should an object": {
+					"pass": 1,
+					"fail": 0
+				},
+				"response body have correct property and value": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				5
+			],
+			"allTests": [
+				{
+					"it should response 200 status code": true,
+					"response Content-Type header should have application/json value": true,
+					"respose should have X-Data-Source header with value \"cache\"": true,
+					"response body should an object": true,
+					"response body have correct property and value": true
+				}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 715,
+	"collection": {
+		"requests": [
+			{
+				"id": "cc16878f-ae9b-4014-9b82-4c366d1aa58a",
+				"method": "POST"
+			},
+			{
+				"id": "d988f6a6-2894-4d3f-8b81-1ce42b2555f7",
+				"method": "POST"
+			},
+			{
+				"id": "43854838-c2af-497e-aa5d-1a3298a4029c",
+				"method": "POST"
+			},
+			{
+				"id": "1ab9b0c5-ad60-42bd-86b8-b172358b61e9",
+				"method": "POST"
+			},
+			{
+				"id": "a71f75c0-1b49-4a76-a802-e8237e160d98",
+				"method": "POST"
+			},
+			{
+				"id": "e3d0ee2a-7c1c-4ef4-a813-73a03be389d7",
+				"method": "POST"
+			},
+			{
+				"id": "0024fe89-0881-4a90-921d-ae3e6cfc1fb4",
+				"method": "POST"
+			},
+			{
+				"id": "6b907b60-7dea-424b-828e-154afef55e9e",
+				"method": "POST"
+			},
+			{
+				"id": "e6a9bbef-a180-455c-85dd-a0620473c690",
+				"method": "POST"
+			},
+			{
+				"id": "335947b8-2c44-42a3-ae98-4d0ef29d8d65",
+				"method": "GET"
+			},
+			{
+				"id": "99940335-edac-4b91-a011-e9282841c2d3",
+				"method": "POST"
+			},
+			{
+				"id": "0ed14525-1341-4d07-9a8e-0a23187ac2d1",
+				"method": "GET"
+			},
+			{
+				"id": "f41f0342-a530-45f8-bff2-c699c3f4a573",
+				"method": "GET"
+			}
+		]
+	}
+}
